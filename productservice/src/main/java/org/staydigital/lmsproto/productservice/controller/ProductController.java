@@ -2,7 +2,7 @@ package org.staydigital.lmsproto.productservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.staydigital.lmsproto.productservice.model.Product;
+import org.staydigital.lmsproto.productservice.repository.ProductEntry;
 import org.staydigital.lmsproto.productservice.repository.ProductRepository;
 
 @RestController
@@ -21,13 +21,8 @@ public class ProductController {
     }
 
     @RequestMapping(value = "product/{id}", method = RequestMethod.GET)
-    public Product getProductById(@PathVariable String id) {
+    public ProductEntry getProductById(@PathVariable String id) {
         return repo.findOne(id);
-    }
-
-    @RequestMapping(method = RequestMethod.POST)
-    public Product create(@RequestBody Product product) {
-        return repo.save(product);
     }
 
 }

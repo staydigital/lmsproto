@@ -1,18 +1,18 @@
-package org.staydigital.lmsproto.productservice.model;
+package org.staydigital.lmsproto.productservice.repository;
 
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Data
-@ToString
+
+
 @Entity
-public class Product {
+@Data
+public class ProductEntry {
 
     @Id
-    private String productId;
+    private String id;
     private String productName;
     private String shortDescription;
     private String longDescription;
